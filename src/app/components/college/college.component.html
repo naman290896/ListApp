@@ -1,0 +1,46 @@
+<div class="px-20">
+    <div class="search-results" infiniteScroll [infiniteScrollDistance]="2" [infiniteScrollThrottle]="50" (scrolled)="onScroll()">
+        <div *ngFor="let college of collegeList" class="clgPanel">
+            <div class="clgImage">
+                <div class="ribbon" *ngIf="college.promoted"><span>PROMOTED</span></div>
+                <div class="overlay"></div>
+                <div class="rating">
+                    <p><span>{{college.rating}}</span>/<span class="font-size-12">5</span></p>
+                    <p class="font-size-12">{{college.rating_remarks}}</p>
+                </div>
+                <img src="../../../assets/images/{{college.image}}"/>
+                <div class="ranksTags font-size-12">
+                    <div class="tag" >
+                        <span *ngFor="let tag of college.tags">{{tag}}</span>
+                    </div>
+                    <div class="rank">
+                        <span>#{{college.ranking}}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="clgInfo px-15">
+                <div class="clgLocation">
+                    <p>
+                        <b class="font-size-18">{{college.college_name}} 
+                        <span class="collegeRating font-size-12">
+                            <i [class]="(college.rating == 0) ? 'fa fa-star-o' : 'fa fa-star'"></i>
+                            <i [class]="(college.rating >= 2) ? 'fa fa-star' : 'fa fa-star-o'"></i>
+                            <i [class]="(college.rating >= 3) ? 'fa fa-star' : 'fa fa-star-o'"></i>
+                            <i [class]="(college.rating >= 4) ? 'fa fa-star' : 'fa fa-star-o'"></i>
+                            <i [class]="(college.rating == 5) ? 'fa fa-star' : 'fa fa-star-o'"></i>
+                        </span></b>
+                    </p>
+                    <p><b>{{college.nearest_place[0]}}</b> | <span class="text-muted">{{college.nearest_place[1]}}</span></p>
+                    <p class="text-muted"><span class="greeny-blue">93% Match</span> : <b class="color-dark">2.5kms</b> from GTB Nagar, <b class="color-dark">7 Kms</b> from Rajiv Chowk</p>
+                    <p class="offertext"><b>Flat Rs <span class="greeny-blue">2,000</span> off + upto Rs <span class="greeny-blue">500</span> wallet! to avail... <span class="greeny-blue">LOGIN</span></b></p>
+                </div>
+                <div class="clgPricingAmenities">
+                    <p class="originalPrice"><s>&#8377;{{college.original_fees}}</s><span class="discountRibbon"></span><span class="discountPercentage">{{college.discount}}</span></p>
+                    <p class="discountPrice margin-0"><b>&#8377;{{college.discounted_fees}}</b></p>
+                    <p class="font-size-10 margin-0">{{college.fees_cycle}}</p>
+                    <p class="greeny-blue amenties"><b><span *ngFor="let ammenity of college.amenties">{{ammenity}} <span>+ </span></span></b></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

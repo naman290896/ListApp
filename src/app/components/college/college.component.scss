@@ -1,0 +1,162 @@
+.clgPanel{
+    border: solid 1px #ddd;
+    margin: 0 30px 60px;
+    width:45%;
+    display: inline-block;
+    p{
+        margin: 10px 0;
+    }
+    .clgImage {
+        position: relative;
+        img{
+            width: 100%;
+            height: 180px;
+        }
+        .overlay{
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(0,0,0,0.6);
+        }
+        .ribbon{
+            font-size: 15px;
+            text-align: center;
+            color: #fff;
+            z-index: 9;
+            width: 150px;
+            height: 30px;
+            background-color: #68a7ff;
+            position: absolute;
+            right: 0;
+            top: -15px;
+            &:before{
+                content: "";
+                position: absolute;
+                z-index: 2;
+                left: -15px;
+                border: 0;
+                border-top: 15px solid #68a7ff;
+                border-bottom: 15px solid #68a7ff;
+                border-left: 15px solid transparent;
+            }
+            span{
+                display: inline-block;
+                margin-top: 5px;
+            }
+        }
+        .rating{
+            background-color: #f5a626;
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            display: inline-block;
+            position: absolute;
+            right: 15px;
+            top: 30px;
+            text-align: center;
+            p{
+                margin: 0;
+            }
+        }
+        .ranksTags{
+            position: absolute;
+            bottom: 25px;
+            width: 100%;
+            .tag{
+                float: left;
+                margin-left: 15px;
+                span{
+                    background-color: #fff;
+                    border-radius: 15px;
+                    padding:8px 10px;
+                    margin-right: 15px;
+                }
+            }
+            .rank{
+                color: #fff;
+                float: right;
+                margin-right: 15px;
+            }
+        }
+    }
+    .clgInfo{
+        font-size: 12px;
+        .offertext {
+            background-color: #ccf5e7;
+            padding: 10px 15px;
+            position: relative;
+            left: -15px;
+            border-radius: 0 20px 20px 0;
+        }
+        .collegeRating{
+            position: relative;
+            top: -2px;
+            left: 10px;
+        }
+    }
+    .clgLocation, .clgPricingAmenities{
+        display: inline-block;
+    }
+    .clgPricingAmenities{
+        float: right;
+        text-align: right;
+        .originalPrice{
+            position: relative;
+            margin-bottom: 0;
+            font-size: 15px;
+            s{
+                margin-right: 30px;
+            }
+            .discountPercentage{
+                position: absolute;
+                font-size: 10px;
+                right: 10px;
+                color: #fff;
+                top: 3px;
+            }
+        }
+        .amenties{
+            position: relative;
+            top: 20px;
+            span:last-child span {
+                display: none;
+            }
+        }
+        .discountPrice{
+            font-size: 28px;
+            color: #dd1c26;
+        }
+        .discountRibbon{
+            position: relative;
+            bottom: 0;
+            right: 12px;
+            height: 10px;
+            background: #dd1c26;
+            padding: 0 5px;
+            transform: rotate(180deg);
+            display: inline-block;
+            &:before {
+                content: "";
+                width: 0;
+                height: 0;
+                border-width: 6px 12px;
+                border-style: solid;
+                border-color: #dd1c26;
+                position: absolute;
+                left: -10px;
+            }
+            &:after {
+                position: absolute;
+                content: "";
+                width: 0;
+                height: 0;
+                border-left: 6px solid #dd1c26;
+                border-top: 6px solid transparent;
+                border-bottom: 6px solid transparent;
+                right: -10px;
+            }
+        }
+    }
+}
